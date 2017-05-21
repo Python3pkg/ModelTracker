@@ -16,8 +16,8 @@ class ModelTracker(models.Model):
         if sys.version_info > (3,):
             lng=int
         else:
-            lng=long
-        types=[type("a"),type(1),type({}),type([]),type(("1",2)),type(True),type(lng(1)),type(u"a"),type(1.1),type(None)]
+            lng=int
+        types=[type("a"),type(1),type({}),type([]),type(("1",2)),type(True),type(lng(1)),type("a"),type(1.1),type(None)]
         history = History()
         history.table = self._meta.db_table
         history.done_on = timezone.now()

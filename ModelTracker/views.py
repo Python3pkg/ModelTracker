@@ -49,7 +49,7 @@ def fetchChanges(id,table):
         row["by"] = change.done_by
         row["changes"] = []
         row["name"]=change.name
-        for key in change.old_state.keys():
+        for key in list(change.old_state.keys()):
             if change.old_state[key] != change.new_state.get(key, None):
                 if type(change.old_state[key])in [type({}),type([])]:
                     text="%s: <br/>"%key
